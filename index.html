@@ -1,0 +1,69 @@
+<!--Daisy Kisner-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Countdown</title>
+    <script>
+          
+        function countdowntolaunch() {
+            //Countdown from 10 to 1 seconds
+            var count = 10;
+            var countdown = setInterval(function () {
+                count--;
+                // If the count is 0, stop the counting and display the message Countdown complete
+                if (count <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById("DisplayMessages").innerHTML = "Countdown Complete";
+                    document.getElementById("DisplayCountdown").innerHTML = "";
+                }
+                // If the count is 5, display the message "5 seconds left"
+                 else if (count <= 5) {
+                     document.getElementById("DisplayCountdown").innerHTML = count + " seconds left";
+                     document.getElementById("DisplayMessages").innerHTML = "You have reached the halfway point, theres no way back";
+                 }
+                 //Otherwise, display the message "5 seconds left"
+                 else {
+                     document.getElementById("DisplayCountdown").innerHTML = count;
+                 }
+            }, 1000);
+        }
+        //Write a fuction when you press the start button it disables the stop buttons
+        function PressStartButton(){
+            document.getElementById("myStartButton").disabled = true;
+            document.getElementById("myStopButton").disabled = false;
+        }
+        //write a fuction when you press the stop button it disables the start button
+        function PressStopButton(){
+            document.getElementById("myStartButton").disabled = false;
+            document.getElementById("myStopButton").disabled = true;
+        }
+        
+
+
+    </script>
+    <style> 
+        body { 
+            background-image: url(download\ \(1\).jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: Blue
+        }
+  </style>
+</head>
+<body>
+     
+    <h2>lets go Countdown</h2>
+    <!--Display a start button--> 
+    <button id="myStartButton" onclick="PressStartButton()">Start Button</button>   
+    <!--Display a stop button-->
+    <button id="myStopButton" onclick="PressStopButton()">Stop Button</button> 
+    <!--Button to control the countdown-->
+    <!--<button onClick="Countdown()"> Start Countdown</button>-->
+    <button onclick="countdowntolaunch()">Start Countdown</button>
+    <!--This will display a countdown-->
+    <p id="DisplayCountdown">10</p>
+    <p id="DisplayMessages">what for the countdown to start....</p>
+</body>
+
+</html>

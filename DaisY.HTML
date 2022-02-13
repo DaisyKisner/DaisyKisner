@@ -1,0 +1,85 @@
+<!--This tells the browser that we are sending it all HTML document to render-->
+<!doctype html>
+<!--Starts the HTML Document-->
+<html lang="en">
+    <head> 
+        <!--tThis will display the title in tab, not on the actual page-->
+        <title>Mission Control, We have Blast Off</title>
+        <!--Start functions to start the countdown-->
+        <!--First will be functions to start the cpuntdown-->
+        <!--The script tags make this runnable script instead of displaying this code to everyone-->
+             <script>
+            //This function will start the count down
+            function StartCountdown()
+            {
+                //This var will hold the time in seconds
+                
+                counter = 10;
+                //This will set the interval to 1 second
+                setInterval(function()
+                {
+                    //This will decremet the counter by 1
+                    counter--;
+                    if(counter >= 0)
+                    { 
+                         //If counter is greater keep counting down.
+                         //This will display the counter to the user.
+                         (span = document.getElementById("CountDownDisplay")) ; 
+                         span.innerHTML = counter;
+                     }
+                     //Check if the counter is equal to 0
+                     if (counter === 0)
+                     {
+                         //Blast off
+                         alert("We have left the ground!") ;
+                         //Clear the interval
+                         clearInterval(counter);
+                     }
+                    }, 1000);
+                }
+                function stopCountdown
+                {
+            
+                 alert("CounterStopped!")
+                }
+            
+        //This function will pause a live countdown
+        function pauseCountdown()
+
+                //This this will stop the counter
+               alert("Countdown Paused!");
+             </script>
+             <!--Lets make CSS to style a background image color for the entire page-->
+             <style>
+                 body
+                 {
+                     background-image: url(download.jpeg);
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                 }
+             </style>
+      </head>
+    <!--here we have some inline CSS to change the background color of the body-->
+    <body 
+        <h2> style="color: beige;", Welcome to UAT Mission Control</h2>
+        <!--Here is the name-->
+         <h2> Welcome to UAT Mission Control</h2>
+         <img src="maxresdefault.jpg" width="400" height="300">
+         <p>Today we are going to head to Mars.</p>
+         <!--Place buttons that will start the count down-->
+         <button onclick="startCountdown()">Start Countdown</button> 
+         <button onclick="pauseCountdown()">Pause Countdown</button>
+         <!--This will display the countdown-->
+         <p id="CountDownDisplay"></p>
+         <!--Place footer here!-->
+         <footer>
+             <p>UAT Mission Control</p>
+             <p>Auther: Daisy Kisner</p>
+         </footer>
+    </body>
+
+
+
+
+
+</html>
